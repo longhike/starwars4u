@@ -1,0 +1,24 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    justify-content: center;
+    text-align: center;
+}
+
+#samHead {
+    display: inline-block;
+}
