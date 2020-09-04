@@ -19,6 +19,6 @@ main {
     text-align: center;
 }
 
-#samHead {
+.sam-head {
     display: inline-block;
 }

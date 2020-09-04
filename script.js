@@ -17,11 +17,7 @@ var questions = [
   }
 ]
 
-// set counter
-var timer = document.getElementById('timerSam')
-
-// set question index
-var qIndex = 0;
+console.log(questions)
 
 // results variable
 var results = {
@@ -29,18 +25,42 @@ var results = {
   false: 0
 }
 
+var countdown;
+var timer = 10
+// variable for question index
+var qIndex = 0
+
+var highScore = document.getElementById('viewHighScores')
+
 console.log(results)
 
-console.log(questions)
-// variable 'begin' to clear the div
-var begin = document.getElementById('question-container')
+// variable 'questionContainer' to clear the 
+var questionContainer = document.getElementById('questionContainer')
 // 'hideStart' to remove start button
-var hideStart = document.getElementById('start-btn')
+var startBtn = document.getElementById('startBtn')
+// timer selector
+var timerEl = document.getElementsByClassName('timer-sam')[0]
 
 
 
-function createQuestion() {
+// ######################### FUNCTIONS ######################### 
+
+// start the quiz, run question function, timer function
+startBtn.addEventListener('click', function (e) {
+  // e.preventDefault() -- doesn't exist as not contained in <form></form>
+  // removes start button
+  startBtn.style.display = "none"
+  runTimer()
+  nextQuestion()
+})
+
+
+// question function (add correct answer, wrong answer conditional)
+function nextQuestion() {
+  // set nextQuestion function to the current index 
   var currentQuestion = questions[qIndex];
+
+  // create the template for the questions
   // add break
   var addBreak = document.createElement('br')
   // add text of first question
@@ -59,39 +79,37 @@ function createQuestion() {
   addFirstOptions.setAttribute('id', 'answer-buttons')
   addFirstOptions.setAttribute('class', 'btn-grid')
 
-  // for (var i = 0; i < currentQuestion.options.length; i++) {
-
-  // }
   // set buttons - first button
   addFirstButton.setAttribute('id', 'opt1')
   addFirstButton.setAttribute('class', 'btn answer')
   addFirstButton.innerText = currentQuestion.options[0]
-  addFirstButton.onclick = handleClick
+  addFirstButton.addEventListener('click', checkAnswer)
+  // addFirstButton.onclick = handleClick
   // set buttons - second button
   addSecondButton.setAttribute('id', 'opt2')
   addSecondButton.setAttribute('class', 'btn answer')
   addSecondButton.innerText = currentQuestion.options[1]
-  addSecondButton.onclick = handleClick
+  addSecondButton.addEventListener('click', checkAnswer)
+  // addSecondButton.onclick = handleClick
   // set buttons - third button
   addThirdButton.setAttribute('id', 'opt3')
   addThirdButton.setAttribute('class', 'btn answer')
   addThirdButton.innerText = currentQuestion.options[2]
-  addThirdButton.onclick = handleClick
+  addThirdButton.addEventListener('click', checkAnswer)
+  // addThirdButton.onclick = handleClick
   // set buttons - fourth button
   addFourthButton.setAttribute('id', 'opt4')
   addFourthButton.setAttribute('class', 'btn answer')
   addFourthButton.innerText = currentQuestion.options[3]
-  addFourthButton.onclick = handleClick
+  addFourthButton.addEventListener('click', checkAnswer)
+  // addFourthButton.onclick = handleClick
   // clears whole container
-  begin.innerHTML = ''
-  // removes start button
-  hideStart.remove()
+  questionContainer.innerHTML = ''
+
   // add break
-  begin.appendChild(addBreak)
+  questionContainer.appendChild(addBreak)
   //create the question text
-  begin.append(setQuestion)
-  // create the grid for the option buttons
-  begin.appendChild(addFirstOptions)
+  questionContainer.appendChild(setQuestion)
   // create buttons - first button
   addFirstOptions.appendChild(addFirstButton)
   // create buttons - second button
@@ -100,96 +118,60 @@ function createQuestion() {
   addFirstOptions.appendChild(addThirdButton)
   // create buttons - fourth button
   addFirstOptions.appendChild(addFourthButton)
+  // create the grid for the option buttons
+  questionContainer.appendChild(addFirstOptions)
+}
+
+// timer function
+function runTimer() {
+  // clear the timer first, so that if accidentally click 'start' again, resets
+  clearInterval(countdown);
+
+  countdown = setInterval(function () {
+    timer--
+    timerEl.textContent = timer
+
+    if (timer <= 0) {
+      endGame('Oops! Out of time! ')
+    }
+  }, 1000)
+}
+
+// highscores function (to show high scores div)
+
+function showHighScore() {
+  questionContainer.innerHTML = ''
+
+  // code here to show score within question-container 
+
+}
+
+
+function checkAnswer() {
+  console.log(this.innerText === questions[qIndex].answer)
+
+  if (this.innerText === questions[qIndex].answer) {
+    results.correct++
+  }
+  else {
+    results.false++
+  }
 
   qIndex++;
+
+  if (qIndex < questions.length) {
+    nextQuestion()
+  } else {
+    endGame('Game Over! ')
+  }
 }
 
-function handleClick(event) {
-  event.preventDefault()
-  console.log(event)
-  // some function here that lets me check if button chosen === questions[i].answer
-  // if () {
-  //   results.correct++
-  //   alert('Nice! ')
-  //   }
-  // else {
-  //   alert('Whoops, wrong answer')
-  //   results.false++
-  // }
-
-  // cycles the question to next
-  if (qIndex <= questions.length)
-
-    createQuestion();
+function endGame(msg) {
+  clearInterval(countdown)
+  alert(`${msg} Here are your results: Correct: ${results.correct}; False: ${results.false}`)
+  location.reload()
 }
 
-
-// start the quiz here - when clicked, clears the start the quiz info, start the timer
-document.getElementById('start-btn').addEventListener('click', function () {
-  //add start to timer here.
-  createQuestion();
+highScore.addEventListener('click', () => {
+  alert('Not yet... to come!')
 })
-
-// console.log(document)
-// //see which answer is correct
-// var answerEls = document.getElementsByClassName('answer')
-// console.log(answerEls)
-
-// for (var i = 0; i < answerEls.length; i++) {
-//   answerEls[i].addEventListener('click', function () {
-//     alert('button works!')
-//   })
-// }
-
-
-
-
-
-// var next = document.getElementById('next-btn').addEventListener(click, function () {
-
-//   })
-
-
-// function nextQuestion() {  }
-
-// var questionOne = document.getElementById('question')
-//     questions.innerText = questions[0].question
-
-// var answer = document.getElementsByClassName('answer')
-// console.log(answer);
-
-// for (i = 0; i < questions[0].options.length; i++){
-//     answer[i].textContent = questions.options[i]
-// }
-
-
-// var KEY = "new-localstorage-test";
-
-// var myObj = {
-//   name: 'Ben'
-// }
-
-// console.log(myObj)
-// console.log(typeof myObj)
-// console.log(myObj.toString())
-
-// var stringy = JSON.stringify(myObj)
-// console.log(typeof stringy)
-// console.log(stringy)
-
-// localStorage.setItem(KEY, stringy)
-
-// var fromStorage = localStorage.getItem(KEY)
-// console.log(typeof fromStorage)
-// console.log(fromStorage)
-
-// var parsed = JSON.parse(fromStorage)
-// console.log(typeof parsed)
-// console.log(parsed)
-
-// var newKey = "TESTING";
-// sessionStorage.setItem(newKey, JSON.stringify(myObj));
-
-// var newVal = JSON.parse(sessionStorage.getItem(newKey));
-
-// console.log(newVal)
