@@ -132,17 +132,19 @@ function getAnswer () {
         if (this.innerText === questions[qIndex - 1].answer) {
             console.log(this.innerText);
             console.log(questions[qIndex - 1].answer);
-            alert('Nice! Got that one.')
+            this.setAttribute('style','background-color: green;')
+            // alert('Nice! Got that one.')
             score.correct++
             console.log(score);
-            changeShit()
+            setTimeout(changeShit, 1000)
         } else {
             console.log(this.innerText);
             console.log(questions[qIndex - 1].answer);
-            alert('You fool! Do better on the next one.')
+            // alert('You fool! Do better on the next one.')
+            this.setAttribute('style','background-color: red;')
             score.incorrect++
             console.log(score);
-            changeShit()
+            setTimeout(changeShit, 1000)
         }
         })
     } 
@@ -207,4 +209,3 @@ closeModal.addEventListener('mouseup', (e) => {
     closeModal.style.color = '#aaa'
 }
 )
-

@@ -14,8 +14,13 @@ main {
 
 }
 
+.answer {
+    margin: 2px;
+}
+
 .card {
     border: none;
+    
 }
 
 .row {
