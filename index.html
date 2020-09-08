@@ -28,21 +28,50 @@
         </nav>
     </header>
     <!-- this is the whole quiz container -->
-    <main class="container">
-        <div class="card">
-            <h1 class="sam-head"><strong>Sam's Quiz</strong></h1>
-            <div id="question-container">
-                <br>
-                <p style="font-size: larger;">You have 30 seconds - click "Start" to begin!</p>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="card" id="question-card">
+                    <h2 class="sam-head"><strong>Sam's Star Wars Quiz</strong></h2>
+                    <div id="question-container">
+                        <br>
+                        <p style="font-size: larger;">You have 30 seconds - click "Start" to begin!</p>
+                    </div>
+                    <br>
+                    <div class="controls">
+                        <button id="startBtn" class="startBtn btn btn-primary">Start</button>
+                    </div>
+                </div>
             </div>
-            <div class="controls">
-                <button id="startBtn" class="startBtn btn">Start</button>
+            <br>
+            <!-- info form -->
+            <div class="row">
+                <div class="card" id="info-card">
+                    <div class="card-content" id="final-score">
+
+                    </div>
+                    <button id="play-again" class="btn btn-primary">Play again!</button>
+                    <!-- <h6 class="sam-head"><strong>Save your score: </strong></h6>
+                    <form>
+                        <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your initials">
+                        </div>
+                        <button type="submit" class="btn btn-primary reload">Submit</button>
+                    </form> -->
+                </div>
             </div>
-        </div>
+        </div>     
     </main>
 
+    <div class="modal">
+        <div class="modal-content">
+          <span class="_close">&times;</span>
+          <p>Not yet... to come!</p>
+        </div>
+      </div>
+
     <!-- javascript -->
-    <script src="./script3.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

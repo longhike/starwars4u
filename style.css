@@ -9,16 +9,51 @@ main {
     display: flex;
     width: 100vw;
     height: 70vh;
-    justify-content: center;
+    /* justify-content: center;  */
     align-items: center;
 
 }
 
-.container {
+.card {
+    border: none;
+}
+
+.row {
     justify-content: center;
     text-align: center;
 }
 
 .sam-head {
     display: inline-block;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: whitesmoke;
+    margin: 15% auto; /* 15% from the top, centered */
+    padding: 20px;
+    border: 1px  solid #888;
+    width: 80%;
+}
+
+._close {
+    color: #aaa;
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#info-card {
+    display: none;
 }
