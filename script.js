@@ -88,10 +88,10 @@
 startBtn.addEventListener('click', () => {
     startBtn.style.display = 'none'
     runTimer()
-    changeShit()
+    changeStuff()
 })
 
-function changeShit () {
+function changeStuff () {
     
     if (questions[qIndex] === undefined) {
         endGame('Game over! ')
@@ -136,7 +136,7 @@ function getAnswer () {
             // alert('Nice! Got that one.')
             score.correct++
             console.log(score);
-            setTimeout(changeShit, 1000)
+            setTimeout(changeStuff, 1000)
         } else {
             console.log(this.innerText);
             console.log(questions[qIndex - 1].answer);
@@ -144,7 +144,7 @@ function getAnswer () {
             this.setAttribute('style','background-color: red;')
             score.incorrect++
             console.log(score);
-            setTimeout(changeShit, 1000)
+            setTimeout(changeStuff, 1000)
         }
         })
     } 
