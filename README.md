@@ -6,7 +6,13 @@
 
 ## Description:
 
-This is a timed quiz that asks questions about star wars
+This is a timed quiz that asks questions about Star Wars
+
+![start screen](./images/start-screen-ss.png)
+
+![question sample](./images/question-sample-ss.png)
+
+![game over](./images/game-ended-ss.png)
 
 ## Set-up & Installation requirements:
 
@@ -33,7 +39,7 @@ Javascript
 ## Contribution Guidlines 
 ​
 Direct link to site:
-https://longhike.github.io/starwars4u/
+http://starwars4u-env.eba-i9zrhymm.us-east-2.elasticbeanstalk.com/
 ​
 ### License
 ​
