@@ -40,7 +40,7 @@
     // set timer variables:
     let countdown
     let timer = 30
-    let timerEl = document.getElementsByClassName('timer-sam')[0]
+    let timerEl = document.getElementsByClassName('timer-div')[0]
 
     // set question and score variables
     let qIndex = 0

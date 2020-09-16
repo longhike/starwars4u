@@ -9,7 +9,6 @@ main {
     display: flex;
     width: 100vw;
     height: 70vh;
-    /* justify-content: center;  */
     align-items: center;
 
 }
@@ -28,7 +27,7 @@ main {
     text-align: center;
 }
 
-.sam-head {
+.quiz-head {
     display: inline-block;
 }
 

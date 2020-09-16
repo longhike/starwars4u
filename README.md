@@ -1,8 +1,8 @@
-# hwFour
+# Star Wars 4 U - a quiz game
 
-### Created on 6/9/2020
+### Created on 6/9/2020 (updated Sept 2020)
 
-### By Sam Ascheim
+### By longhike
 
 ## Description:
 
@@ -14,11 +14,11 @@ None needed besides an up-to-date web browser.
 
 ## Known Bugs:
 
-Timer works, but I'm having trouble getting my original function to run in the updated js file. Also need to figure the high scores.
+No known bugs; high scores feature to come. 
 
 ## Support & Contact details:
 
-e-mail sam.ascheim@gmail.com
+e-mail long.hike.dev@gmail.com
 
 ## Technologies Used
 
@@ -30,15 +30,13 @@ Boostrap
 
 Javascript
 
-JQUERY
-
 ## Contribution Guidlines 
 ​
 Direct link to site:
-https://longhike.github.io/hwFour/
+https://longhike.github.io/starwars4u/
 ​
 ### License
 ​
-Copyright(c) 2020 By Sam Ascheim
+Copyright(c) 2020 By longhike
 ​
 This software is licensed under MIT license.
