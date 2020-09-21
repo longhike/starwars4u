@@ -6,7 +6,7 @@
 html, body {
     background-image: url("http://www.desktopimages.org/pictures/2012/0221/1/orig_507607.jpg");
     background-size: cover;
-    color: rgb(255,255,255,1);
+    color: rgba(255,255,255,1);
 }
 
 
@@ -32,7 +32,7 @@ main {
 }
 
 .qa-text {
-    color: rgb(255,255,255,1)!important;
+    color: rgba(255,255,255,1)!important;
 }
 
 .quiz-head {
