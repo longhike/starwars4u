@@ -51,6 +51,7 @@ main {
 }
 
 .modal-content {
+    color: black;
     background-color: whitesmoke;
     margin: 15% auto; /* 15% from the top, centered */
     padding: 20px;
